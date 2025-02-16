@@ -1,37 +1,33 @@
-import React from 'react'
-import { Table } from 'react-bootstrap'
+import React from "react";
+import { Table } from "react-bootstrap";
 
 export const Book = () => {
-  return (<>
-    <Table striped bordered hover>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td colSpan={2}>Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </Table>
-  </>
-  )
-}
+  const tHeadings: string[] = [
+    "BookId",
+    "Title",
+    "Publisher",
+    "Isbn",
+    "Author",
+    "Edition",
+    "Price",
+    "Total Qty",
+    "Avilable Qty",
+    "Last Updated Date",
+    "Last Updated Time",
+  ];
+
+  return (
+    <>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            {tHeadings.map((headings) => (
+              <th>{headings}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </Table>
+    </>
+  );
+};
